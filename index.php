@@ -810,7 +810,7 @@
 
 
 
-        <div class="col-md-6">
+        <div class="col-md-12 text-center">
             <input type="submit" name="Submit" value="SUBMIT" class="btn btn-primary ">
         </div>
     </form>
