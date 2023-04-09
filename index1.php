@@ -815,7 +815,7 @@
 
         <div class="col-md-12 text-center">
             <!-- <input type="submit" name="Submit" value="SUBMIT" class="btn btn-primary "> -->
-            <button style="font-size: x-large; color: white; background-color: orange; width: 500px; height: 90px;"  onclick = "fn1()" id="btn1"> Submit </button>
+            <button  onclick = "fn1()" id="btn1"> Submit </button>
         </div>
     </form>
 </section>
