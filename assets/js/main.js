@@ -235,3 +235,7 @@ function fn1() {
     alert(result);
 
 }
+
+// let result=s0+s1+s2+s3;
+//     alert(result);
+//     document.cookie="cname="+result;

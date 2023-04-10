@@ -6,9 +6,9 @@ $stream=$_POST['stream'];
 $email=$_POST['email'];
 $country=$_POST['country'];
 $phno=$_POST['phno'];
+$code='ESTJ';
 
-
-$sql="insert into student_info values(null,'$sname','$grade','$stream','$email','$country','$phno')";
+$sql="insert into student_info values(null,'$sname','$grade','$stream','$email','$country','$phno','$code')";
 
 mysqli_query($conn,$sql);
 

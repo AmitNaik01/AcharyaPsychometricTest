@@ -11,6 +11,8 @@
 </div>
 <section class="container my-2 w-100 mb-4 text-dark p-2 main">
     <form class="row g-3 p-3 " action="./includes/submit.php" method="post" onSubmit="fn1()">
+    
+        <div name =''></div>
         <div class="col-md-8">
             <label for="validationDefault01" class="form-label">Student Name</label>
             <input type="text" class="form-control" id="validationDefault01" name="sname" required>
@@ -42,7 +44,7 @@
             <!-- EXTROVERT or INROVERT -->
             <section>
                 <div class="container mt-4">
-                    <h2 class="text-center mt-4">EXTROVERT or INROVERT</h2>
+                    <h2 class="text-center mt-4">EXTROVERT or INTROVERT</h2>
                     <ul class="ml-4">
                         <li>
                             <h5 class="mt-4">BEHAVIOUR</h5>
@@ -98,7 +100,7 @@
 
                     <div class="row">
                         <div class="col ml-4">
-                            <input class="form-check-input" type="radio" id="rd9" name="op5" value="9" required>
+                            <input class="form-check-input" type="radio" id="rd9" name="op5" value="E-My Energy grows at parties" required>
                             <label class="form-check-label" for="inlineRadio1">My Energy grows at parties</label>
                         </div>
                         <div class="col ml-4">
@@ -672,7 +674,7 @@
                     <div class="row">
                         <div class="col ml-4">
                             <input class="form-check-input" type="radio" id="rd99" name="op50" value="9" required>
-                            <label class="form-check-label" for="inlineRadio1">I preserve</label>
+                            <label class="form-check-label" for="inlineRadio1">I persevere</label>
                         </div>
                         <div class="col ml-4">
                             <input class="form-check-input" type="radio" id="rd100" name="op50" value="10">
@@ -768,7 +770,7 @@
                     <div class="row">
                         <div class="col ml-4">
                             <input class="form-check-input" type="radio" id="rd115" name="op58" value="25" required>
-                            <label class="form-check-label" for="inlineRadio1">I live up to standards </label>
+                            <label class="form-check-label" for="inlineRadio1">I live up-to standards </label>
                         </div>
                         <div class="col ml-4">
                             <input class="form-check-input" type="radio" id="rd116" name="op58" value="26">
