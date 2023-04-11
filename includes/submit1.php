@@ -11,16 +11,13 @@ include('connect.php');
 
 // $sql="insert into student_info values(null,'$sname','$grade','$stream','$email','$country','$phno','$code')";
 
-
 // mysqli_query($conn,$sql);
 
-// $myValue = $_GET["myValue"];
 
-// echo $myValue;
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                    
     function get_data() {
-        $name = $_POST['name'];
+        // $name = $_POST['sname'];
         $file_name='StudentsData'. '.json';
    
         if(file_exists("$file_name")) { 
@@ -61,12 +58,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 'op31' => $_POST['op31'],
                 'op32' => $_POST['op32'],
                 'op33' => $_POST['op33'],
-                
+                'op34' => $_POST['op33'],
                 'op34' => $_POST['op34'],
                 'op35' => $_POST['op35'],
                 'op36' => $_POST['op36'],
                 'op37' => $_POST['op37'],
-                'op38' => $_POST['op38'],
                 'op39' => $_POST['op39'],
                 'op40' => $_POST['op40'],
                 'op41' => $_POST['op41'],
@@ -77,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 'op46' => $_POST['op46'],
                 'op47' => $_POST['op47'],
                 'op48' => $_POST['op48'],
-                'op49' => $_POST['op49'],
+                'op49' => $_POST['op59'],
                 'op50' => $_POST['op50'],
                 'op51' => $_POST['op51'],
                 'op52' => $_POST['op52'],
@@ -89,6 +85,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 'op58' => $_POST['op58'],
                 'op59' => $_POST['op59'],
                 'op60' => $_POST['op60'],
+                
             );
             $array_data[]=$extra;
             echo "file exist<br/>";
@@ -130,12 +127,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 'op31' => $_POST['op31'],
                 'op32' => $_POST['op32'],
                 'op33' => $_POST['op33'],
-                
+                'op34' => $_POST['op33'],
                 'op34' => $_POST['op34'],
                 'op35' => $_POST['op35'],
                 'op36' => $_POST['op36'],
                 'op37' => $_POST['op37'],
-                'op38' => $_POST['op38'],
                 'op39' => $_POST['op39'],
                 'op40' => $_POST['op40'],
                 'op41' => $_POST['op41'],
@@ -146,7 +142,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 'op46' => $_POST['op46'],
                 'op47' => $_POST['op47'],
                 'op48' => $_POST['op48'],
-                'op49' => $_POST['op49'],
+                'op49' => $_POST['op59'],
                 'op50' => $_POST['op50'],
                 'op51' => $_POST['op51'],
                 'op52' => $_POST['op52'],
