@@ -1,33 +1,31 @@
 <?php
 include('connect.php');
-// $data = json_decode(file_get_contents("php://input"), true);
-// $sname=$_POST['sname'];
-// $grade=$_POST['grade'];
-// $stream=$_POST['stream'];
-// $email=$_POST['email'];
-// $country=$_POST['country'];
-// $phno=$_POST['phno'];
-// $code='INFP';
-
-// $sql="insert into student_info values(null,'$sname','$grade','$stream','$email','$country','$phno','$code')";
 
 
-// mysqli_query($conn,$sql);
 
-// $myValue = $_GET["myValue"];
-
-// echo $myValue;
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-                   
-    function get_data() {
-        $name = $_POST['name'];
-        $file_name='StudentsData'. '.json';
-   
-        if(file_exists("$file_name")) { 
-            $current_data=file_get_contents("$file_name");
-            $array_data=json_decode($current_data, true);
-                               
-            $extra=array(
+
+    function get_data()
+    {
+        $name = $_POST['sname'];
+        $grade = $_POST['grade'];
+        $stream = $_POST['stream'];
+        $email = $_POST['email'];
+        $country = $_POST['country'];
+        $phno = $_POST['phno'];
+        $file_name = 'StudentsData' . '.json';
+
+        if (file_exists("$file_name")) {
+            $current_data = file_get_contents("$file_name");
+            $array_data = json_decode($current_data, true);
+
+            $extra = array(
+                'StudentName' => $name,
+                'Grade'  => $grade,
+                'Stream'  => $stream,
+                'E-mail'  => $email,
+                'Country'  => $country,
+                'Phone number'  => $phno,
                 'op1' => $_POST['op1'],
                 'op2' => $_POST['op2'],
                 'op3' => $_POST['op3'],
@@ -61,7 +59,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 'op31' => $_POST['op31'],
                 'op32' => $_POST['op32'],
                 'op33' => $_POST['op33'],
-                
                 'op34' => $_POST['op34'],
                 'op35' => $_POST['op35'],
                 'op36' => $_POST['op36'],
@@ -90,13 +87,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 'op59' => $_POST['op59'],
                 'op60' => $_POST['op60'],
             );
-            $array_data[]=$extra;
+            $array_data[] = $extra;
             echo "file exist<br/>";
             return json_encode($array_data);
-        }
-        else {
-            $datae=array();
-            $datae[]=array(
+        } else {
+            $datae = array();
+            $datae[] = array(
+                'StudentName' => $name,
+                'Grade'  => $grade,
+                'Stream'  => $stream,
+                'E-mail'  => $email,
+                'Country'  => $country,
+                'Phone number'  => $phno,
                 'op1' => $_POST['op1'],
                 'op2' => $_POST['op2'],
                 'op3' => $_POST['op3'],
@@ -130,7 +132,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 'op31' => $_POST['op31'],
                 'op32' => $_POST['op32'],
                 'op33' => $_POST['op33'],
-                
                 'op34' => $_POST['op34'],
                 'op35' => $_POST['op35'],
                 'op36' => $_POST['op36'],
@@ -160,22 +161,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 'op60' => $_POST['op60'],
             );
             echo "file not exist<br/>";
-            return json_encode($datae);   
+            return json_encode($datae);
         }
     }
-  
-    $file_name='StudentsData'. '.json';
-      
-    if(file_put_contents("$file_name", get_data())) {
+
+    $file_name = 'StudentsData' . '.json';
+
+    if (file_put_contents("$file_name", get_data())) {
         echo 'success';
-    }                
-    else {
-        echo 'There is some error';                
+    } else {
+        echo 'There is some error';
     }
 }
-
-?>  
-<!-- <script>
-alert("emp details inserted successfully");
-document.location="./index.php";
-</script> -->

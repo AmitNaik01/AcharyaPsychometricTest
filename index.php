@@ -3,7 +3,7 @@
 <div class="container-fluid  py-3">
     <header class="text-center">
 
-        <img src="./assets/img/logo.png" class="img-fluid " alt="Acharya Institutes">
+        <img src="./assets/img/alogo.png" class="img-fluid " alt="Acharya Institutes">
     </header>
     <div class=" container text-center heading mt-4 p-2 text-light ">
         <h1 class="font-weight-bold">Acharya Psychometric Test </h1>
@@ -31,23 +31,20 @@
         </div>
         <div class="col-md-6">
             <label for="inputPassword4" class="form-label">Country</label>
-            <!-- <input type="text" class="form-control" id="inputPassword4" name="country" required> -->
-            <select class="selectpicker countrypicker form-control" data-flag="true"></select>
+            <select class="selectpicker countrypicker form-control" name="country" value=" " data-flag="true"></select>
         </div>
         <div class="col-6">
-        <label for="inputAddress" class="form-label">Mobile Number</label>
+            <label for="inputAddress" class="form-label">Mobile Number</label>
             <br>
             <input type="tel" id="phone" class="form-control" name="phno" minlength="10" maxlength="12" value="+91" required>
-            <!-- <label for="inputAddress" class="form-label ">Mobile Number</label> -->
-            <!-- <input type="text" class="form-control" id="inputAddress" name="phno" required> -->
-            <!-- <div><input class="form-control mt-4" name="phno" type="text" id="phone" ></div> -->
+
 
             <script>
                 var input = document.querySelector("#phone");
                 window.intlTelInput(input, {
                     separateDialCode: true,
-                    excludeCountries: ["il"],
-                    preferredCountries: ["in", "jp", "pk", "no"]
+                    excludeCountries: [],
+                    preferredCountries: ["in", "uz"]
                 });
             </script>
         </div>
