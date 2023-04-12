@@ -10,7 +10,7 @@
     </div>
 </div>
 <section class="container my-2 w-100 mb-4 text-dark p-2 main">
-    <form class="row g-3 p-3 " action="./includes/submit.php" method="post" onSubmit="fn1()">
+    <form class="row g-3 p-3 " action="submit.php" method="post" onSubmit="fn1()">
 
         <div name=''></div>
         <div class="col-md-8">
@@ -36,7 +36,7 @@
         <div class="col-6">
             <label for="inputAddress" class="form-label">Mobile Number</label>
             <br>
-            <input type="tel" id="phone" class="form-control" name="phno" minlength="10" maxlength="12" value="+91" required>
+            <input type="tel" id="phone" class="form-control" name="phno"  maxlength="10" value="" required>
 
 
             <script>
