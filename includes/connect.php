@@ -2,7 +2,7 @@
 
 if($conn)
 {
-    echo"connection is ok";
+    // echo"connection is ok";
 }
 else
 {

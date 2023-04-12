@@ -73,8 +73,8 @@ function fn1() {
   }
 
   //Summation of all the results from the previous pages
-  let result = s0 + s1 + s2 + s3;
-
+  var a = s0 + s1 + s2 + s3;
+  window.location.href = window.location.href+'?a='+a;
   //Displaying the result to the User
   alert(result);
 

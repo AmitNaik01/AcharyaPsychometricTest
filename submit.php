@@ -5,11 +5,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     function get_data()
     {
+        global $s0, $s1, $s2, $s3, $res ,$answer ;
 
 
-
-
-        $extra = array(
+        $answer = array(
 
             'op1' => $_POST['op1'],
             'op2' => $_POST['op2'],
@@ -71,10 +70,132 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             'op58' => $_POST['op58'],
             'op59' => $_POST['op59'],
             'op60' => $_POST['op60'],
+            
         );
-
-        $array_data[] = $extra;
+        $array_data[] = $answer;
         $json_data = json_encode($array_data);
+        //FOR FIRST EXTROVERT - INTROVERT
+        for ($i = 1; $i <= 30; $i++) {
+            // Define the first letter to count
+            $firstLetterToCount = "E";
+
+            // Initialize the counter
+            $count = 0;
+
+            // Loop through the $_POST array to count the radio buttons with the specified first letter
+            foreach ($_POST as $answer => $value) {
+                if (substr($value, 0, 1) === $firstLetterToCount) {
+                    $count++;
+                }
+            }
+
+            // Display an if-else statement based on the count
+            if ($count > 7) {
+                // echo "Extrovert ";
+                $s0 = 'E';
+                break;
+            } else {
+                // echo "Introvert";
+                $s0 = 'I';
+                break;
+            }
+
+            // Add a line break between each element
+            echo "<br>";
+        }
+
+        //FOR FIRST SENSING - INTUITION
+        for ($i = 31; $i <= 60; $i++) {
+            // Define the first letter to count
+            $firstLetterToCount = "S";
+
+            // Initialize the counter
+            $count = 0;
+
+            // Loop through the $_POST array to count the radio buttons with the specified first letter
+            foreach ($_POST as $answer => $value) {
+                if (substr($value, 0, 1) === $firstLetterToCount) {
+                    $count++;
+                }
+            }
+
+            // Display an if-else statement based on the count
+            if ($count > 7) {
+                // echo "Sensing ";
+                $s1 = 'S';
+                break;
+            } else {
+                // echo "Intuition";
+                $s1 = 'I';
+                break;
+            }
+
+            // Add a line break between each element
+            echo "<br>";
+        }
+
+        //FOR FIRST thinking - FEELING
+        for ($i = 61; $i <= 90; $i++) {
+            // Define the first letter to count
+            $firstLetterToCount = "T";
+
+            // Initialize the counter
+            $count = 0;
+
+            // Loop through the $_POST array to count the radio buttons with the specified first letter
+            foreach ($_POST as $answer => $value) {
+                if (substr($value, 0, 1) === $firstLetterToCount) {
+                    $count++;
+                }
+            }
+
+            // Display an if-else statement based on the count
+            if ($count > 7) {
+                // echo "THINKING ";
+                $s2 = 'T';
+                break;
+            } else {
+                // echo "FEELING";
+                $s2 = 'F';
+                break;
+            }
+
+            // Add a line break between each element
+            echo "<br>";
+        }
+
+        //FOR FIRST JUDGING - PERCEPTION
+        for ($i = 91; $i <= 120; $i++) {
+            // Define the first letter to count
+            $firstLetterToCount = "J";
+
+            // Initialize the counter
+            $count = 0;
+
+            // Loop through the $_POST array to count the radio buttons with the specified first letter
+            foreach ($_POST as $answer => $value) {
+                if (substr($value, 0, 1) === $firstLetterToCount) {
+                    $count++;
+                }
+            }
+
+            // Display an if-else statement based on the count
+            if ($count > 7) {
+                // echo "JUDGING ";
+                $s3 = 'J';
+                break;
+            } else {
+                // echo "PERCEPTION";
+                $s3 = 'P';
+                break;
+            }
+
+            // Add a line break between each element
+            echo "<br>";
+        }
+        $res = $s0 . $s1 . $s2 . $s3;
+        echo $res;
+        
         return $json_data;
     }
 
@@ -84,17 +205,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email'];
     $country = $_POST['country'];
     $phno = $_POST['phno'];
-    // $code = "YRDE";
+    
+    
     $json = get_data();
-    $sql = "insert into student_info values(null,'$sname','$grade','$stream','$email','$country','$phno','$json' )";
-    // $sql = "insert into test values('$json')";
+
+    $sql = "insert into student_info values(null,'$sname','$grade','$stream','$email','$country','$phno','$json','$res' )";
+
 
     mysqli_query($conn, $sql);
 }
 ?>
-
+<!-- 
 <script>
-alert("emp details inserted successfully");
-document.location="result.php";
-</script>
-
+    alert("emp details inserted successfully");
+    document.location = "result.php";
+</script> -->

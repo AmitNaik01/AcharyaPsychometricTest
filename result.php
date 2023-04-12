@@ -1,22 +1,11 @@
 <?php include('./includes/header.php');  ?>
 
-<?php 
-$username = "root"; 
-$password = ""; 
-$database = "psychometric-test"; 
-$mysqli = new mysqli("localhost", $username, $password, $database); 
-$query = "SELECT * FROM student_info where email='sadaa@sd.com'";
+<?php
+include('includes/connect.php');
 
-
-
-if ($result = $mysqli->query($query)) {
-    while ($row = $result->fetch_assoc()) {
-       
-        $json_array[]  = $row["answer"]; 
-    }
-    print(json_encode($json_array));
-    $result->free();
-} 
+$sql = "select * from test_result where code='ISTJ'";
+$res = mysqli_query($conn, $sql);
+$row = mysqli_fetch_array($res);
 ?>
 
 <div class="container-fluid  py-3">
@@ -29,9 +18,60 @@ if ($result = $mysqli->query($query)) {
     </div>
 </div>
 <div class="container">
-    
-<div class="col-md-12 ">
-<h1>Result </h1>
+  <!-- <div class="row">
+    <div class="col ">
+      <h2  >Your Strengths:</h2>
+    </div>
+    <div class="col ">
+    <h2><?php echo $row['strength'];?></h2>
+    </div>
+    <div class="row">
+    <div class="col ">
+      <h2  >Your Strengths:</h2>
+    </div>
+    <div class="col ">
+    <h2><?php echo $row['carrers'];?></h2>
+      
+    </div>
+  </div> -->
+
+  <div class="row">
+  <div class="col">Your Strengths:</div>
+  <div class="col"><?php echo $row['strength'];?></div>
+  <div class="w-100"></div>
+  <div class="col">Suggested Carrers:</div>
+  <div class="col"><?php echo $row['carrers'];?></div>
+</div>
+</div>
+
+
+<script>
+    function prettyJ(json) {
+  if (typeof json !== 'string') {
+    json = JSON.stringify(json, undefined, 2);
+  }
+  return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, 
+    function (match) {
+      let cls = "\x1b[36m";
+      if (/^"/.test(match)) {
+        if (/:$/.test(match)) {
+          cls = "\x1b[34m";
+        } else {
+          cls = "\x1b[32m";
+        }
+      } else if (/true|false/.test(match)) {
+        cls = "\x1b[35m"; 
+      } else if (/null/.test(match)) {
+        cls = "\x1b[31m";
+      }
+      return cls + match + "\x1b[0m";
+    }
+  );
+}
+</script>
+
+$json
+
 <!-- EXTROVERT or INROVERT -->
 
 </div>

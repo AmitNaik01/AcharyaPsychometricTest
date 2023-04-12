@@ -11,7 +11,9 @@
 </div>
 <section class="container my-2 w-100 mb-4 text-dark p-2 main">
     <form class="row g-3 p-3 " action="submit.php" method="post" onSubmit="fn1()">
-
+    
+   
+        
         <div name=''></div>
         <div class="col-md-8">
             <label for="validationDefault01" class="form-label">Student Name</label>
@@ -33,7 +35,7 @@
             <label for="inputPassword4" class="form-label">Country</label>
             <select class="selectpicker countrypicker form-control" name="country" value=" " data-flag="true"></select>
         </div>
-        <div class="col-6">
+        <div class="col-md-6">
             <label for="inputAddress" class="form-label">Mobile Number</label>
             <br>
             <input type="tel" id="phone" class="form-control" name="phno"  maxlength="10" value="" required>
@@ -815,10 +817,14 @@
                     </div>
                 </div>
         </div>
+        
+<div class="col-md-12  text-center">
+    <!-- <input type="submit" name="Submit" value="SUBMIT" class="btn btn-primary " onclick="fn1()"> -->
+    <button class="bn30 " id="btn1"> Submit </button>
+</div>
 </section>
 
 
-
 </div>
 
 
@@ -828,11 +834,9 @@
 
 
 
-<div class="col-md-12 text-center">
-    <!-- <input type="submit" name="Submit" value="SUBMIT" class="btn btn-primary " onclick="fn1()"> -->
-    <button class="bn30" id="btn1"> Submit </button>
-</div>
+
 </form>
 </section>
+
 
 <?php include('./includes/footer.php');  ?>
